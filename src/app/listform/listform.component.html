@@ -1,0 +1,61 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>List forms</h1>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">
+          <i class="bi bi-search"></i>
+        </span>
+      </div>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Rechercher par nom"
+      />
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card top-selling overflow-auto">
+      <div class="card-body pb-0">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th class="paddingBottom" scope="col">name</th>
+              <th class="paddingBottom" scope="col">quantity</th>
+              <th class="paddingBottom" scope="col">status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let form of formList" id="tr">
+              <td>{{ form.name }}</td>
+              <td>{{ form.quantity }}</td>
+              <td>{{ form.status }}</td>
+              <th scope="row">
+                <button class="btn btn-primary">+ voir plus</button>
+              </th>
+
+              <td>
+                <i class="bi bi-trash"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link">Previous</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link"></a>
+      </li>
+      <li class="page-item">
+        <a class="page-link">Next</a>
+      </li>
+    </ul>
+  </nav>
+</main>
