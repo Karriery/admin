@@ -20,23 +20,30 @@
         <table class="table table-borderless">
           <thead>
             <tr>
-              <th class="paddingBottom" scope="col">name</th>
-              <th class="paddingBottom" scope="col">quantity</th>
-              <th class="paddingBottom" scope="col">status</th>
+              <th class="paddingBottom" scope="col">Nom</th>
+              <th class="paddingBottom" scope="col">E-mail</th>
+              <th class="paddingBottom" scope="col">Tel</th>
+              <th class="paddingBottom" scope="col">Booking</th>
             </tr>
           </thead>
 
           <tbody>
             <tr *ngFor="let form of formList" id="tr">
-              <td>{{ form.name }}</td>
-              <td>{{ form.quantity }}</td>
-              <td>{{ form.status }}</td>
+              <td>{{ form.document.nom }}</td>
+              <td>{{ form.document.email }}</td>
+              <td>{{ form.document.tel }}</td>
+              <td>{{ form.start }}</td>
               <th scope="row">
-                <button class="btn btn-primary">+ voir plus</button>
+                <button
+                  class="btn btn-primary"
+                  (click)="seemore(form.document)"
+                >
+                  + voir plus
+                </button>
               </th>
 
               <td>
-                <i class="bi bi-trash"></i>
+                <i class="bi bi-trash" (click)="deleteSiege(form._id)"></i>
               </td>
             </tr>
           </tbody>

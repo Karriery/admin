@@ -3,9 +3,13 @@
     <div class="row d-flex">
       <div class="col-lg-6">
         <div class="logo d-flex align-items-start">
-          <span class="d-none d-lg-block">Formapp</span>
+          <span class="d-none d-lg-block">DiagFlash</span>
         </div>
-        <img src="./../../assets/login.png" class="image" />
+        <img
+          style="width: 60%; margin: 0 auto"
+          src="https://www.lescompagnonsdp.com/wp-content/uploads/2022/03/diagflash-1024x923.png"
+          class="image"
+        />
       </div>
       <div class="col-lg-6">
         <div class="card2 card border-0 px-4 py-5">
@@ -14,7 +18,7 @@
             <small class="or text-center">se connecter</small>
             <div class="line"></div>
           </div>
-          <form>
+          <form (ngSubmit)="onSubmit()">
             <div class="row px-3">
               <label class="mb-1"
                 ><h6 class="mb-0 text-sm">Adresse e-mail</h6></label
@@ -24,6 +28,7 @@
                 type="text"
                 name="email"
                 placeholder="Enter a valid email address"
+                [(ngModel)]="formData.email"
               />
             </div>
             <div class="row px-3">
@@ -34,6 +39,7 @@
                 type="password"
                 name="password"
                 placeholder="Enter password"
+                [(ngModel)]="formData.password"
               />
             </div>
 

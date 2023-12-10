@@ -1,1 +1,236 @@
-<p>item works!</p>
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>document</h1>
+  </div>
+
+  <section class="section profile">
+    <div class="row" id="row">
+      <div class="card" id="card_user">
+        <div
+          class="card-body profile-card pt-4 d-flex flex-column align-items-center"
+        >
+          <i class="bi bi-buildings" id="icon"></i>
+          <h2>{{ document?.nom }}</h2>
+        </div>
+        <div class="information_user">
+          <h4>Détails du Form :</h4>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">E-mail :</div>
+            <div class="col-lg-4 col-md-8">{{ document?.email }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Tel :</div>
+            <div class="col-lg-4 col-md-8">{{ document?.tel }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Civilité :</div>
+            <div class="col-lg-4 col-md-8">{{ document?.civilite }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Année de naissance :</div>
+            <div class="col-lg-4 col-md-8">{{ document?.anneDeNaissance }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Situation familiale :</div>
+            <div class="col-lg-4 col-md-8 container-multiple">
+              <div
+                class="multy-item"
+                *ngFor="let e of document?.situationFamiliale"
+              >
+                {{ e }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Nombre d'enfants eus ou adoptés :
+            </div>
+            <div class="col-lg-4 col-md-8">{{ document?.nombreDenfants }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Nombre d'enfants élevés :</div>
+            <div class="col-lg-4 col-md-8">
+              {{ document?.nombreDenfantsEleves }}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Etude supérieure :</div>
+            <div class="col-lg-4 col-md-8">{{ document?.etudeSuperieure }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">Age souhaité de départ :</div>
+            <div class="col-lg-4 col-md-8">
+              {{ document?.ageSouhaiteDeDepart }}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Age de début d'activité professionnelle :
+            </div>
+            <div class="col-lg-4 col-md-8">
+              {{ document?.ageDuDebutdactiviteProfessionnelle }}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Dans votre carrière avez-vous été dans une ou plusieurs de ces
+              situations? :
+            </div>
+            <div class="col-lg-4 col-md-8 container-multiple">
+              <div class="multy-item" *ngFor="let e of document?.avezVousEte">
+                {{ e }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Avez-vous rencontré une ou plusieurs de ces situations? :
+            </div>
+            <div class="col-lg-4 col-md-8 container-multiple">
+              <div
+                class="multy-item"
+                *ngFor="let e of document?.avezVousRencontre"
+              >
+                {{ e }}
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Niveau actuel (net annuel avant impôts) ? :
+            </div>
+            <div class="col-lg-4 col-md-8">{{ document?.niveauActuel }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              Son évolution durant la carrière? :
+            </div>
+            <div class="col-lg-4 col-md-8">{{ document?.evolution }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              A titre individuel (PER, assurance vie…) :
+            </div>
+            <div class="col-lg-4 col-md-8">{{ document?.titreIndividuel }}</div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              A titre professionnel obligatoire (PERO...) :
+            </div>
+            <div class="col-lg-4 col-md-8">
+              {{ document?.titreProfessionnelObligatoire }}
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8 col-md-4 label">
+              A titre professionnel facultatif (PERCO, Madelin...) :
+            </div>
+            <div class="col-lg-4 col-md-8">
+              {{ document?.titreProfessionnelFacultatif }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!---->
+    </div>
+  </section>
+  <div class="results">
+    <div class="box">
+      <div class="top">
+        <img
+          *ngIf="document?.risqueTrimestre"
+          [src]="formatImageUrl(document?.risqueTrimestre.status)"
+          alt=""
+        />
+        <h2>Risques sur les trimetres</h2>
+      </div>
+      <div class="body" *ngIf="document?.risqueTrimestre">
+        {{ document?.risqueTrimestre.text }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="top">
+        <img
+          *ngIf="document?.risqueComp"
+          [src]="formatImageUrl(document?.risqueComp.status)"
+          alt=""
+        />
+        <h2>Risques sur les régimes complémentaires</h2>
+      </div>
+      <div class="body" *ngIf="document?.risqueComp">
+        {{ document?.risqueComp.text }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="top">
+        <img
+          *ngIf="document?.risqueSup"
+          [src]="formatImageUrl(document?.risqueSup.status)"
+          alt=""
+        />
+        <h2>Risques sur les régimes supplémentaires</h2>
+      </div>
+      <div class="body" *ngIf="document?.risqueSup">
+        {{ document?.risqueSup.text }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="top">
+        <img src="../../assets/images/nuage.png" alt="" />
+        <h2>Risques sur l'âge de départ Teeest</h2>
+      </div>
+      <div class="body">
+        C'est just pour test
+        <!-- {{ document?.risqueTraindevie.text }} -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ex
+        nostrum, blanditiis maxime cum molestias numquam voluptatibus est
+        praesentium soluta, quis obcaecati, quas ipsa doloremque quia
+        repudiandae dolorum autem ipsum!
+      </div>
+    </div>
+    <div class="box">
+      <div class="top">
+        <img
+          *ngIf="document?.risqueTraindevie"
+          [src]="formatImageUrl(document?.risqueTraindevie.status)"
+          alt=""
+        />
+        <h2>Risques train de vie</h2>
+      </div>
+      <div class="body" *ngIf="document?.risqueTraindevie">
+        {{ document?.risqueTraindevie.text }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="top">
+        <img
+          *ngIf="document?.risqueReversion"
+          [src]="formatImageUrl(document?.risqueReversion.status)"
+          alt=""
+        />
+        <h2>Risques réversion</h2>
+      </div>
+      <div class="body" *ngIf="document?.risqueReversion">
+        {{ document?.risqueReversion.text }}
+      </div>
+    </div>
+  </div>
+</main>

@@ -15,8 +15,8 @@ const routes: Routes = [
       {
         path: 'listform',
         component: ListformComponent,
-        children: [{ path: 'item', component: ItemComponent }],
       },
+      { path: 'item', component: ItemComponent },
       { path: 'check', component: CheckbookingComponent },
     ],
   },
