@@ -10,6 +10,7 @@ import { ItemComponent } from './listform/item/item.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { ArchiveComponent } from './archive/archive.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     CheckbookingComponent,
     ItemComponent,
     SidebarComponent,
+    ArchiveComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { ListformComponent } from './listform/listform.component';
 import { CheckbookingComponent } from './checkbooking/checkbooking.component';
 import { ItemComponent } from './listform/item/item.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
       },
       { path: 'item', component: ItemComponent },
       { path: 'check', component: CheckbookingComponent },
+      { path: 'archive', component: ArchiveComponent },
     ],
   },
 ];

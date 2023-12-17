@@ -4,11 +4,11 @@ import { DocumentService } from '../services/document.service';
 import Swal from 'sweetalert2';
 import { MeetingsService } from '../services/meetings.service';
 @Component({
-  selector: 'app-listform',
-  templateUrl: './listform.component.html',
-  styleUrl: './listform.component.scss',
+  selector: 'app-archive',
+  templateUrl: './archive.component.html',
+  styleUrl: './archive.component.scss',
 })
-export class ListformComponent {
+export class ArchiveComponent {
   formList: any;
   constructor(
     private router: Router,
@@ -16,7 +16,7 @@ export class ListformComponent {
     private meetingsService: MeetingsService
   ) {}
   ngOnInit() {
-    this.documentService.get().subscribe((data) => {
+    this.documentService.getArchived().subscribe((data) => {
       console.log(data);
       this.formList = data;
     });

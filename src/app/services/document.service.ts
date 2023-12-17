@@ -16,6 +16,10 @@ export class DocumentService {
     return this.http.get(this.baseUrl, { headers });
   }
 
+  getArchived() {
+    return this.http.get(this.baseUrl + 'archived', { headers });
+  }
+
   post(document: any) {
     return this.http.post(this.baseUrl, document, { headers });
   }
@@ -24,6 +28,6 @@ export class DocumentService {
     return this.http.get(this.baseUrl + id, { headers });
   }
   deleteById(id: string) {
-    return this.http.delete(this.baseUrl + id, { headers });
+    return this.http.patch(this.baseUrl + id, { archived: true }, { headers });
   }
 }
