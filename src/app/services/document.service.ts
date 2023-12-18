@@ -24,6 +24,9 @@ export class DocumentService {
     return this.http.post(this.baseUrl, document, { headers });
   }
 
+  patch(id: any, document: any) {
+    return this.http.patch(this.baseUrl + id, document, { headers });
+  }
   getById(id: string) {
     return this.http.get(this.baseUrl + id, { headers });
   }

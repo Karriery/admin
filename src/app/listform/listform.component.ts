@@ -51,4 +51,17 @@ export class ListformComponent {
       }
     });
   }
+  chengeStatus(id: any, value: any) {
+    console.log(value);
+    this.documentService.patch(id, { meetingOver: value }).subscribe((data) => {
+      this.ngOnInit();
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  }
 }

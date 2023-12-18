@@ -194,16 +194,15 @@
     </div>
     <div class="box">
       <div class="top">
-        <img src="../../assets/images/nuage.png" alt="" />
-        <h2>Risques sur l'âge de départ Teeest</h2>
+        <img
+          *ngIf="document?.risqueAge"
+          [src]="formatImageUrl(document?.risqueAge.status)"
+          alt=""
+        />
+        <h2>Risques sur l'âge de départ</h2>
       </div>
       <div class="body">
-        C'est just pour test
-        <!-- {{ document?.risqueTraindevie.text }} -->
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur ex
-        nostrum, blanditiis maxime cum molestias numquam voluptatibus est
-        praesentium soluta, quis obcaecati, quas ipsa doloremque quia
-        repudiandae dolorum autem ipsum!
+        {{ document?.risqueAge.text }}
       </div>
     </div>
     <div class="box">
