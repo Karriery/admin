@@ -2,6 +2,9 @@
   <full-calendar [options]="calendarOptions"></full-calendar>
 </div> -->
 <main id="main" class="main">
+  <div class="pagetitle">
+    <h1>Liste des rendez-vous</h1>
+  </div>
   <div class="container-meetings">
     <div class="calendly">
       <div
@@ -19,7 +22,7 @@
         <div>{{ timeFormat(e.end_time) }}</div>
       </div>
     </div>
-    <div class="check_details" *ngIf="check">
+    <div class="check_details" *ngIf="check && meet.email">
       <div class="email">
         <div class="dot"></div>
         {{ meet.email }}

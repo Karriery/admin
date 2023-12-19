@@ -1,5 +1,5 @@
 .card{
-    width: 70%;
+    width: 100%;
     padding: 20px;
 }
 #row{display: grid;
@@ -52,28 +52,34 @@ hr {
     gap: 5px;
   }
 
+  .label {
+    font-weight: bold !important;
+  }
+
 
   .results {
-    width: 80%;
-    margin: 100px auto;
+    width: 100%;
+    margin: 0 auto;
     min-height: 300px;
     display: grid;  
+    align-content: start;
     grid-template-columns:  1fr;
     gap: 10px;
     .box {
-      min-height: 200px;
       border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       background-color: white;
+      transition: all 1s;
       .top {
         display: grid;
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 100px 1fr 50px;
         justify-content: start;
         justify-items: start;
         align-items: center;
         margin-top: 20px;
+        cursor: pointer;
         h2 {
-          font-size: 32px;
+          font-size: 24px;
           font-weight: bold;
         }
         img {
@@ -81,8 +87,18 @@ hr {
           justify-self: center;
         }
       }
+      
       .body {
         padding: 20px ;
       }
     }
+   
+  }
+
+
+  .big-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 10px;
   }

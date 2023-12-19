@@ -137,18 +137,22 @@ hr {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 20px;
-  margin-top: 100px;
-  width: 60%;
-  height: 60vh;
+  width: 100%;
+  height: 70vh;
   align-content: start;
   overflow-y: scroll;
-  justify-items: center;
+  justify-items: start;
   align-content: start;
+  background-color: white;
+  border: 1px solid #b6b6b6;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 8px;
+
   .check_details {
     border: 2px solid #1e667e;
     background-color: white;
     border-radius: 8px;
-    width: 80%;
+    width: 100%;
     min-height: 200px;
     padding: 20px;
     display: grid;

@@ -15,19 +15,25 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="home/listform">
           <i class="bi bi-card-list"></i>
-          <span>Liste des formulaires</span>
+          <span>Liste des leads</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="home/check">
           <i class="bi bi-book"></i>
-          <span>Réservation</span>
+          <span>Liste des rendez-vous</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="home/archive">
           <i class="bi bi-archive"></i>
-          <span>Archive</span>
+          <span>Liste des leads supprimés</span>
+        </a>
+      </li>
+      <li class="nav-item align-self-end">
+        <a class="nav-link collapsed" (click)="disconnect()">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Déconnecter</span>
         </a>
       </li>
     </ul>

@@ -12,6 +12,12 @@ export class ItemComponent {
     private documentService: DocumentService
   ) {}
   document: any;
+  a1: any = false;
+  a2: any = false;
+  a3: any = false;
+  a4: any = false;
+  a5: any = false;
+  a6: any = false;
   ngOnInit(): void {
     this.route.queryParams.subscribe((queryParams: any) => {
       this.documentService.getById(queryParams.id).subscribe((data) => {

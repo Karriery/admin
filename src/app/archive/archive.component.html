@@ -1,6 +1,6 @@
 <main id="main" class="main">
   <div class="pagetitle">
-    <h1>List forms</h1>
+    <h1>Liste des leads supprimés</h1>
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">
@@ -11,6 +11,7 @@
         class="form-control"
         type="text"
         placeholder="Rechercher par nom"
+        [(ngModel)]="searchName"
       />
     </div>
   </div>
@@ -22,13 +23,13 @@
             <tr>
               <th class="paddingBottom" scope="col">Nom</th>
               <th class="paddingBottom" scope="col">E-mail</th>
-              <th class="paddingBottom" scope="col">Tel</th>
-              <th class="paddingBottom" scope="col">Booking</th>
+              <th class="paddingBottom" scope="col">Téléphone</th>
+              <th class="paddingBottom" scope="col">Phoning</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr *ngFor="let form of formList" id="tr">
+            <tr *ngFor="let form of filteredSieges" id="tr">
               <td>{{ form.nom }}</td>
               <td>{{ form.email }}</td>
               <td>{{ form.tel }}</td>
@@ -58,14 +59,21 @@
 
   <nav aria-label="Page navigation">
     <ul class="pagination">
-      <li class="page-item">
-        <a class="page-link">Previous</a>
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="goToPreviousPage()">Previous</a>
       </li>
-      <li class="page-item">
-        <a class="page-link"></a>
+      <li
+        class="page-item"
+        *ngFor="let page of totalPages"
+        [class.active]="page === currentPage"
+      >
+        <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
       </li>
-      <li class="page-item">
-        <a class="page-link">Next</a>
+      <li
+        class="page-item"
+        [class.disabled]="currentPage === totalPages.length"
+      >
+        <a class="page-link" (click)="goToNextPage()">Next</a>
       </li>
     </ul>
   </nav>
