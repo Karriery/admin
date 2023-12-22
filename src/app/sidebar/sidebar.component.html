@@ -13,25 +13,50 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home/listform">
-          <i class="bi bi-card-list"></i>
+        <a
+          class="nav-link collapsed"
+          [routerLink]="['/home/listform']"
+          [ngClass]="{ 'active-link': isRouteActive('/home/listform') }"
+        >
+          <i
+            class="bi bi-card-list"
+            [ngClass]="{ 'active-link': isRouteActive('/home/listform') }"
+          ></i>
           <span>Liste des leads</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home/check">
-          <i class="bi bi-book"></i>
+        <a
+          class="nav-link collapsed"
+          [routerLink]="['/home/check']"
+          [ngClass]="{ 'active-link': isRouteActive('/home/check') }"
+        >
+          <i
+            class="bi bi-book"
+            [ngClass]="{ 'active-link': isRouteActive('/home/check') }"
+          ></i>
           <span>Liste des rendez-vous</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="home/archive">
-          <i class="bi bi-archive"></i>
+        <a
+          class="nav-link collapsed"
+          [routerLink]="['/home/archive']"
+          [ngClass]="{ 'active-link': isRouteActive('/home/archive') }"
+        >
+          <i
+            class="bi bi-archive"
+            [ngClass]="{ 'active-link': isRouteActive('/home/archive') }"
+          ></i>
           <span>Liste des leads supprimés</span>
         </a>
       </li>
       <li class="nav-item align-self-end">
-        <a class="nav-link collapsed" (click)="disconnect()">
+        <a
+          class="nav-link collapsed"
+          (click)="disconnect()"
+          style="cursor: pointer"
+        >
           <i class="bi bi-box-arrow-left"></i>
           <span>Déconnecter</span>
         </a>

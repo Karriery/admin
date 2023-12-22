@@ -29,7 +29,7 @@
           </thead>
 
           <tbody>
-            <tr *ngFor="let form of filteredSieges" id="tr">
+            <tr *ngFor="let form of filteredSieges.slice().reverse()" id="tr">
               <td>{{ form.nom }}</td>
               <td>{{ form.email }}</td>
               <td>{{ form.tel }}</td>
@@ -51,7 +51,8 @@
                   style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
                   (click)="seemore(form)"
                 >
-                  + voir plus
+                  <i class="bi bi-eye"></i>
+                  voir plus
                 </button>
               </th>
             </tr>

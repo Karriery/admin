@@ -51,11 +51,12 @@
               <th class="paddingBottom" scope="col">E-mail</th>
               <th class="paddingBottom" scope="col">Téléphone</th>
               <th class="paddingBottom" scope="col">Phoning</th>
+              <th class="paddingBottom" scope="col">Actions</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr *ngFor="let form of filteredSieges" id="tr">
+            <tr *ngFor="let form of filteredSieges.slice().reverse()" id="tr">
               <td>{{ form.nom }}</td>
               <td>{{ form.email }}</td>
               <td>{{ form.tel }}</td>
@@ -71,19 +72,22 @@
                   />
                 </div>
               </td>
-              <th scope="row">
+              <th scope="row" style="display: flex; gap: 10px">
                 <button
                   class="btn btn-primary"
                   style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
                   (click)="seemore(form)"
                 >
-                  + voir plus
+                  <i class="bi bi-eye"></i>
+                  voir plus
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                >
+                  <i class="bi bi-trash" (click)="deleteSiege(form._id)"></i>
                 </button>
               </th>
-
-              <td>
-                <i class="bi bi-trash" (click)="deleteSiege(form._id)"></i>
-              </td>
             </tr>
           </tbody>
         </table>
