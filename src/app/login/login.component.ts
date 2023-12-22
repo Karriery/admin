@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         Swal.fire({
           title: 'Incorrect !',
           text: 'Votre adresse e-mail ou votre mot de passe est incorrect',
-          confirmButtonColor: '#3200aa',
+          confirmButtonColor: '#4B49AC',
           confirmButtonText: "D'accord",
         });
         console.error('Login failed', error);

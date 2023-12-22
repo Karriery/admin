@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { DocumentService } from '../services/document.service';
 import Swal from 'sweetalert2';
 import { MeetingsService } from '../services/meetings.service';
+import * as Papa from 'papaparse';
+
 @Component({
   selector: 'app-listform',
   templateUrl: './listform.component.html',
@@ -29,6 +31,21 @@ export class ListformComponent {
     this.calculateTotalPages();
     this.updatePagedList();
   }
+  arr: any[] = [];
+
+  exportToCSV() {
+    const csv = Papa.unparse(this.arr);
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.csv';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  }
   ngOnInit() {
     this.documentService.get().subscribe((data: any) => {
       console.log(data);
@@ -36,6 +53,14 @@ export class ListformComponent {
       this.totalItems = data.length;
       this.calculateTotalPages();
       this.updatePagedAndFilteredSieges();
+      this.arr = data.map((e: any) => {
+        return {
+          nom: e.nom,
+          email: e.email,
+          telephone: e.tel,
+          civilite: e.civilite,
+        };
+      });
     });
   }
   seemore(data: any) {
@@ -52,7 +77,7 @@ export class ListformComponent {
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: ' #1E667E',
-      confirmButtonText: 'Oui, supprimez-le !',
+      confirmButtonText: 'Oui, archive-le !',
       cancelButtonText: 'Non, annulez !',
     }).then((result) => {
       if (result.isConfirmed) {
@@ -75,7 +100,7 @@ export class ListformComponent {
       Swal.fire({
         position: 'top-end',
         icon: 'success',
-        title: 'Your work has been saved',
+        title: 'Enregistrée',
         showConfirmButton: false,
         timer: 1500,
       });

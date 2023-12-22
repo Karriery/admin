@@ -1,6 +1,32 @@
 <main id="main" class="main">
+  <button
+    class="btn btn-primary"
+    (click)="exportToCSV()"
+    style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+  >
+    Exporter au format CSV
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      fill="currentColor"
+      class="bi bi-download"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+      />
+      <path
+        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+      />
+    </svg>
+  </button>
+  <br />
+  <br />
+  <br />
   <div class="pagetitle">
     <h1>Liste des leads</h1>
+
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">
@@ -46,7 +72,11 @@
                 </div>
               </td>
               <th scope="row">
-                <button class="btn btn-primary" (click)="seemore(form)">
+                <button
+                  class="btn btn-primary"
+                  style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px"
+                  (click)="seemore(form)"
+                >
                   + voir plus
                 </button>
               </th>
@@ -64,7 +94,7 @@
   <nav aria-label="Page navigation">
     <ul class="pagination">
       <li class="page-item" [class.disabled]="currentPage === 1">
-        <a class="page-link" (click)="goToPreviousPage()">Previous</a>
+        <a class="page-link" (click)="goToPreviousPage()">Précédent</a>
       </li>
       <li
         class="page-item"
@@ -77,7 +107,7 @@
         class="page-item"
         [class.disabled]="currentPage === totalPages.length"
       >
-        <a class="page-link" (click)="goToNextPage()">Next</a>
+        <a class="page-link" (click)="goToNextPage()">Suivant</a>
       </li>
     </ul>
   </nav>

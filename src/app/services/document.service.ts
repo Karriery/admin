@@ -30,6 +30,10 @@ export class DocumentService {
   getById(id: string) {
     return this.http.get(this.baseUrl + id, { headers });
   }
+
+  getByEmail(email: string) {
+    return this.http.get(this.baseUrl + 'email/' + email, { headers });
+  }
   deleteById(id: string) {
     return this.http.patch(this.baseUrl + id, { archived: true }, { headers });
   }
