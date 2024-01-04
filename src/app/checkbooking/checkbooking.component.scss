@@ -11,17 +11,17 @@ full-calendar {
 }
 
 .calendar {
-  margin-top: 200px;
-  margin-left: 300px;
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 50px;
   height: 70vh;
   justify-items: center;
+  margin-left: -100px;
   align-items: center;
 }
 
 .card{
-  width: 70%;
+  width: 100%;
   padding: 20px;
 }
 #row{display: grid;
