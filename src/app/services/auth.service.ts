@@ -8,7 +8,7 @@ const headers = new HttpHeaders({
   providedIn: 'root',
 })
 export class AuthService {
-  private baseUrl = 'http://31.207.37.178:3000';
+  private baseUrl = 'https://api.diagflashretraite.fr';
 
   constructor(private http: HttpClient) {}
 

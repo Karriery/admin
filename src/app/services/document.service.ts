@@ -9,7 +9,7 @@ const headers = new HttpHeaders({
   providedIn: 'root',
 })
 export class DocumentService {
-  private baseUrl = 'http://31.207.37.178:3000/document/';
+  private baseUrl = 'https://api.diagflashretraite.fr/document/';
   constructor(private http: HttpClient) {}
 
   get() {
