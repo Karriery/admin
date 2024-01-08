@@ -169,22 +169,17 @@
       <div class="document-design">
         <div class="cube-box box1">
           <img
+            class="status-img"
             *ngIf="document?.risqueTrimestre"
             [src]="formatImageUrl(document?.risqueTrimestre.status)"
             alt=""
           />
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-hourglass-split"></i>
-            Risques sur les trimestres
-          </div>
+            <img class="risque" src="../../assets/images/Risques-sur-les-trimestres.png" alt="">
         </div>
         <div class="cube-box box2">
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-calculator"></i>
-
-            Risques sur les régimes complémentaires
-          </div>
+          <img class="risque" src="../../assets/images/Risques-sur-les-regimes-complementaires.png" alt="">
           <img
+          class="status-img"
             *ngIf="document?.risqueComp"
             [src]="formatImageUrl(document?.risqueComp.status)"
             alt=""
@@ -192,28 +187,24 @@
         </div>
         <div class="cube-box box3">
           <img
+          class="status-img"
             *ngIf="document?.risqueSup"
             [src]="formatImageUrl(document?.risqueSup.status)"
             alt=""
           />
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-graph-up-arrow"></i>
-
-            Risques sur les régimes supplémentaires
-          </div>
+       
+          <img class="risque" src="../../assets/images/Risques-sur-les-regimes-supplementaires.png" alt="">
+    
         </div>
         <div class="cube-box boxcenter">
-          <div class="btn btn-secondary btn-lg buton-res">
-            DiagFlash Retraite
-          </div>
+          <img src="../../assets/images/Centre.png" alt="">
         </div>
         <div class="cube-box box4">
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-clock"></i>
-
-            Risques sur l'âge de départ
-          </div>
+        
+          <img class="risque" src="../../assets/images/Risques-sur-lage-de-depart.png" alt="">
+    
           <img
+          class="status-img"
             *ngIf="document?.risqueAge"
             [src]="formatImageUrl(document?.risqueAge.status)"
             alt=""
@@ -221,21 +212,21 @@
         </div>
         <div class="cube-box box5">
           <img
+          class="status-img"
             *ngIf="document?.risqueTraindevie"
             [src]="formatImageUrl(document?.risqueTraindevie.status)"
             alt=""
           />
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-coin"></i>
-            Risques train de vie
-          </div>
+      
+          <img class="risque" src="../../assets/images/Risques-train-de-vie.png" alt="">
+    
         </div>
         <div class="cube-box box6">
-          <div class="btn btn-secondary btn-lg buton-res">
-            <i class="bi bi-people-fill"></i>
-            Risques réversion
-          </div>
+       
+          <img class="risque" src="../../assets/images/Risques-reversion.png" alt="">
+    
           <img
+          class="status-img"
             *ngIf="document?.risqueReversion"
             [src]="formatImageUrl(document?.risqueReversion.status)"
             alt=""

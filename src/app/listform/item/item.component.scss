@@ -105,8 +105,14 @@ hr {
 
 
   .document-design {
+    overflow: hidden;
+    .risque {
+      width: 40%;
+
+    }
     width: 100%;
-    min-height: 400px;
+    margin: 0 auto;
+    height: 400px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "b1 bcenter b2" 
@@ -125,10 +131,14 @@ hr {
       display: flex;
       align-items: center;
       justify-items:center ;
+      cursor: pointer;
     .buton-res {
       display: grid;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
+      border: 2px solid #1e667e ;
+      border-radius: 5px ;
+      padding: 10px;
     }
     }
   }
@@ -136,22 +146,71 @@ hr {
 
   .box1 {
     grid-area: b1;
+    justify-self: end;
+    justify-content: end;
   }
   .box2 {
     grid-area: b2;
+    justify-self: start;
   }
   .box3 {
     grid-area: b3;
+    justify-self: end;
+    justify-content: end;
+
+
   }
   .box4 {
     grid-area: b4;
+    justify-self: start;
   }
   .box5 {
     grid-area: b5;
+    justify-self: end;
+    justify-content: end;
+
+
   }
   .box6 {
     grid-area: b6;
+    justify-self: start;
   }
   .boxcenter {
     grid-area: bcenter;
+    img {
+      width: 150px;
+    }
+  }
+
+
+
+    .document-design {
+      width: 100%;
+      height: 300px;
+      .risque {
+        width: 60%;
+  
+      }
+      .status-img {
+        width: 70px;
+      }
+      
+  }
+
+
+  @media only screen and (max-width: 600px) {
+ 
+    .document-design {
+      width: 100%;
+      height: 200px;
+      .risque {
+        width: 70%;
+  
+      }
+      .status-img {
+        width: 40px;
+      }
+      
+  }
+
   }

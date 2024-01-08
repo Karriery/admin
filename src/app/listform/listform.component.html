@@ -26,7 +26,13 @@
   <br />
   <div class="pagetitle">
     <h1>Liste des leads</h1>
-
+    <div>
+      <select #phoning (change)="updatePagedAndFilteredSiegesByPhoning(phoning.value)" id="">
+        <option value="all">Toute</option>
+        <option value="false" >Réunion terminée </option>
+        <option value="true">Pas terminée</option>
+      </select>
+    </div>
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">
@@ -36,7 +42,7 @@
       <input
         class="form-control"
         type="text"
-        placeholder="Rechercher par nom"
+        placeholder="Rechercher par Téléphone	"
         [(ngModel)]="searchName"
       />
     </div>

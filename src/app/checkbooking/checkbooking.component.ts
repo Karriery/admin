@@ -253,7 +253,7 @@ export class CheckbookingComponent {
     const apiKey =
       'eyJraWQiOiIxY2UxZTEzNjE3ZGNmNzY2YjNjZWJjY2Y4ZGM1YmFmYThhNjVlNjg0MDIzZjdjMzJiZTgzNDliMjM4MDEzNWI0IiwidHlwIjoiUEFUIiwiYWxnIjoiRVMyNTYifQ.eyJpc3MiOiJodHRwczovL2F1dGguY2FsZW5kbHkuY29tIiwiaWF0IjoxNzA0MzYyOTE1LCJqdGkiOiI3NTMyM2VkYS1lNDliLTRjYmEtOWI1OS1jMTg1MzY1ODhlY2MiLCJ1c2VyX3V1aWQiOiI5YWNiZDhjZC02ZGVhLTQ4YmUtOWQyOS05Mzg2ZWZiMjM3YzgifQ._XHV_FzlIbsiK9X5FfuWBIdgKyovink1Uug6bFaIfZE6Y1xtJ42-fLrL4zFmoX0RR15jMx6HMbbJptJoVbfxbQ'; // Replace with your Calendly API key
     const apiUrl =
-      'https://api.calendly.com/scheduled_events?user=https%3A%2F%2Fapi.calendly.com%2Fusers%2FABABMOIVT7L5LSNG';
+      'https://api.calendly.com/scheduled_events?user=https://api.calendly.com/users/9acbd8cd-6dea-48be-9d29-9386efb237c8';
     fetch(apiUrl, {
       method: 'GET',
       headers: {

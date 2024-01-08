@@ -106,6 +106,37 @@ export class ArchiveComponent {
   goToNextPage() {
     this.goToPage(this.currentPage + 1);
   }
+  updatePagedAndFilteredSiegesByPhoning(query : any) {
+    console.log( query )
+    var filteredSieges = []
+    if(query === "all"){
+      filteredSieges = this.formList
+    } else {
+      if(query === "false") {
+        filteredSieges = this.formList.filter((siege) => {
+          return (
+            siege &&
+            siege.meetingOver == false
+          );
+        });
+      } else if(query === "true") {
+        filteredSieges = this.formList.filter((siege) => {
+          return (
+            siege &&
+            siege.meetingOver == true
+          );
+        });
+      }
+      
+    }
+    
+    console.log(this.searchName, 'sernacname');
+    this.totalItems = filteredSieges.length;
+    this.calculateTotalPages();
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.pageAndFiltredSieges = filteredSieges.slice(startIndex, endIndex);
+  }
   updatePagedAndFilteredSieges() {
     const filteredSieges = this.formList.filter((siege) => {
       return (
